@@ -1,0 +1,21 @@
+<div class="row mb-5">
+    <div class="col col-md-6 mx-auto d-grid">
+        <h3>Buscador de bandas</h3>
+        <input type="text" class="form-control" placeholder="Buscar banda" [ngModel]="nombre" (ngModelChange)="searchBandas($event)" (focusout)="sinFoco()" />
+        <p *ngIf="buscando">Buscando...</p>
+        <ul *ngIf="datosEncontrados" class="list-group">
+            <li *ngFor="let banda of bandas" class="list-group-item">
+                <a href="/detalles/{{ this.banda.idbanda }}" class="text-decoration-none">{{ this.banda.nombre_banda }}</a
+        >
+      </li>
+    </ul>
+    <p
+      *ngIf="
+        cadena.length >= 3 && datosEncontrados == false && buscando == false
+      "
+    >
+      Lo sentimos, no hemos encontrado ningun resultado para
+      <strong>{{ cadena }}</strong>
+    </p>
+  </div>
+</div>

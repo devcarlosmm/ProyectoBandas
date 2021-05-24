@@ -1,0 +1,114 @@
+<div class="container">
+    <div class="formulario col col-md-8 col-md-6 mx-auto">
+        <h1 class="text-center">Añadir Banda</h1>
+        <form (ngSubmit)="enviar()" class="form" [formGroup]="formulario">
+            <!-- nombre banda -->
+            <div class="form-group">
+                <label class="form-label">NOMBRE DE BANDA</label>
+                <input type="text" class="form-control" formControlName="nombre_banda" />
+            </div>
+            <p class="error" *ngIf="
+          formulario.controls.nombre_banda.errors?.required &&
+          formulario.controls.nombre_banda.touched
+        ">
+                Nombre de banda requerido
+            </p>
+            <p class="error" *ngIf="
+          formulario.controls.nombre_banda.errors?.minlength &&
+          formulario.controls.nombre_banda.touched
+        ">
+                Nombre de banda de minimo {{ formulario.controls.nombre_banda.errors?.minlength.requiredLength }} caracteres
+            </p>
+            <!-- nombre banda -->
+            <!-- genero banda -->
+            <div class="form-group">
+                <label class="form-label">GENERO DE BANDA</label>
+                <select class="form-select" formControlName="genero">
+          <option [selected]="true" disabled>Seleccione uno</option>
+          <option value="Rock">Rock</option>
+          <option value="Heavy">Heavy</option>
+          <option value="Experimental">Experimental</option>
+        </select>
+            </div>
+            <p class="error" *ngIf="
+          formulario.controls.genero.errors?.required &&
+          formulario.controls.genero.touched
+        ">
+                Genero de banda requerido
+            </p>
+            <!-- genero banda -->
+            <!-- historia -->
+            <div class="form-group">
+                <label class="form-label">HISTORIA</label>
+                <textarea class="form-control" formControlName="historia" id="" cols="30" rows="10"></textarea>
+                <p [ngClass]="{
+            errorLength: formulario.controls.historia.value.length > maxCaracter
+          }">
+                    Caracteres disponibles: {{ formulario.controls.historia.value.length }} / {{ maxCaracter }}
+                </p>
+            </div>
+
+            <p class="error" *ngIf="
+          formulario.controls.historia.errors?.required &&
+          formulario.controls.historia.touched
+        ">
+                Historia requerido
+            </p>
+            <p class="error" *ngIf="formulario.controls.historia.value.length > maxCaracter">
+                La historia no puede contener mas de {{ maxCaracter }} caracteres
+            </p>
+            <!-- historia -->
+            <!-- url video -->
+            <div class="form-group">
+                <label class="form-label">URL VIDEO</label>
+                <input type="text" class="form-control" formControlName="urlVideo" />
+            </div>
+
+            <p class="error" *ngIf="
+          formulario.controls.urlVideo.errors?.required &&
+          formulario.controls.urlVideo.touched
+        ">
+                Url del video requerido
+            </p>
+
+            <!-- url video -->
+            <!-- url web -->
+            <div class="form-group">
+                <label class="form-label">URL WEB</label>
+                <input type="text" class="form-control" formControlName="urlWeb" />
+            </div>
+
+            <p class="error" *ngIf="
+          formulario.controls.urlWeb.errors?.required &&
+          formulario.controls.urlWeb.touched
+        ">
+                Url de web requerido
+            </p>
+            <p class="error" *ngIf="urlWeb.value && urlWeb.invalid">
+                Formato de web incorrecto
+            </p>
+            <!-- url web -->
+            <!-- url spotify-->
+            <div class="form-group">
+                <label class="form-label">URL SPOTIFY</label>
+                <input type="text" class="form-control" formControlName="urlSpotify" />
+            </div>
+
+            <p class="error" *ngIf="
+          formulario.controls.urlSpotify.errors?.required &&
+          formulario.controls.urlSpotify.touched
+        ">
+                Url de Spotify requerido
+            </p>
+            <p class="error" *ngIf="urlSpotify.value && urlSpotify.invalid">
+                Formato de web incorrecto
+            </p>
+            <!--url spotify-->
+            <div class="d-grid mt-3">
+                <button type="submit" class="btn btn-dark" [disabled]="formulario.invalid">
+          Enviar
+        </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+// Media para Movil - tablet
+.container-imagen {
+    background: url("https://www.metallica.com/dw/image/v2/BCPJ_PRD/on/demandware.static/-/Sites-Metallica-Library/default/dwfd731e9f/images/page-banner-images/videos-banner-blue.jpg?sw=1920&sh=504&sm=cut&sfrm=jpg&q=95") center;
+    width: 100%;
+    height: 100px;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    ;
+    .picuet {
+        top: 35px;
+        position: relative;
+        color: whitesmoke;
+    }
+}
+
+// Media para portatiles
+@media screen and (min-device-width: 1024px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+    .video {
+        width: 560px;
+        height: 315px;
+    }
+}
+
+// Media para pantallas grandes
+@media screen and (min-device-width: 1601px) and (-webkit-min-device-pixel-ratio: 1) {
+    .video {
+        width: 1280px;
+        height: 720px;
+    }
+}
