@@ -24,7 +24,7 @@ recogerNombre(nombre){
 // Buscar Bandas
 searchBandas(nombre:string){
     this.cadena=nombre;
-    if(nombre.length>2){
+    if(nombre.length>=2){
         this.buscando=true;
         setTimeout( () => { this.apiService.searchBanda(nombre).subscribe((bandas) => {this.bandas=bandas
         this.buscando=false

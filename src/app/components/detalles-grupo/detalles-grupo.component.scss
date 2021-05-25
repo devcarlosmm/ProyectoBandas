@@ -6,7 +6,7 @@
     border-radius: 10px;
     margin-bottom: 2rem;
     ;
-    .picuet {
+    .posicion-texto {
         top: 35px;
         position: relative;
         color: whitesmoke;
@@ -24,7 +24,7 @@
 // Media para pantallas grandes
 @media screen and (min-device-width: 1601px) and (-webkit-min-device-pixel-ratio: 1) {
     .video {
-        width: 1280px;
-        height: 720px;
+        width: 100%;
+        height: 550px;
     }
 }

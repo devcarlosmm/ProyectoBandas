@@ -1,19 +1,45 @@
 <app-buscador></app-buscador>
 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-    <div class="col" *ngFor="let banda of bandas">
+    <div class="col" *ngFor="let banda of bandas; index as i">
         <div class="card">
-            <img src="..." class="card-img-top" alt="..." />
-            <div class="card-body">
-                <h2 class="card-title">{{ banda.nombre_banda }}</h2>
-                <h5 class="card-text bg-dark bg-gradient text-white p-2 m-2 text-center">
+            <div class="container-imagen">
+                <div class="mx-auto posicion-texto">
+                    <h2 class="card-title text-center">
+                        {{ banda.nombre_banda }}
+                    </h2>
+                </div>
+            </div>
+
+            <div class="card-body bg-light bg-gradient cardBodyAltura">
+                <!--               <h2 class="card-title">{{ banda.nombre_banda }}</h2> -->
+                <h5 class="
+            card-text
+            bg-dark bg-gradient
+            text-white
+            p-2
+            m-2
+            text-center
+            bordeGenero
+          ">
                     Genero musical: {{ banda.genero }}
                 </h5>
-                <p class="card-text">
-                    {{ banda.historia }}
+                <!--                 <p [id]="'historia' + i" class="card-text historia">
+                    {{ banda.historia }} AAARG{{ banda.p1Historia }}
+                    <button class="btn" (click)="leerMas('historia' + i)">
+            Leer Mas
+          </button>
+                </p> -->
+                <p [id]="'historia' + i" class="card-text historia">
+                    {{ banda.p1Historia }}
+                    <span class="dLine puntosSuspensivos"> ...</span>
+                    <span class="dNone fadeInDown">{{ banda.p2Historia }}</span>
+                    <button class="btn botonLeerMas" (click)="leerMas('historia' + i)">
+            Leer Mas
+          </button>
                 </p>
                 <div class="row justify-content-evenly">
                     <div class="col-6 text-center d-grid">
-                        <a class="btn btn-primary" href="detalles/{{ banda.idbanda }}">Editar</a
+                        <a class="btn btn-primary" href="formulario-editar-banda/{{ banda.idbanda }}">Editar</a
             >
           </div>
           <div class="col-6 text-center d-grid">

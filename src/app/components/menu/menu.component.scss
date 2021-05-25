@@ -1,0 +1,14 @@
+.banda {
+    top: 35px;
+    position: relative;
+    color: whitesmoke;
+    background-color: #3169a0;
+    transition: 0.3s;
+    font-size: 110%;
+    font-weight: 500;
+}
+
+.banda:hover {
+    transition: 0.3s;
+    background-color: #25517a;
+}

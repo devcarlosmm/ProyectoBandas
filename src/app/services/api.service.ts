@@ -44,6 +44,7 @@ baseUrl:string;
 
 /* CREAR BANDA */
    createBanda(banda:Banda):Observable<Banda>{
+       banda.idbanda=null;
        return this.httpClient.post<Banda>(this.baseUrl+'crearbanda',banda,httpOptions).pipe(
         tap((banda:Banda) => this.log(`Banda creada con id: ${banda.idbanda}`)),
         catchError(this.handleError<Banda>('createBanda'))

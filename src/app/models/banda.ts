@@ -1,5 +1,5 @@
 export class Banda{
-    idbanda?:number
+    idbanda?:any
     nombre_banda: string
     genero:string
     historia: string

@@ -1,18 +1,19 @@
 // Media para Movil - tablet
 .margen-total {
     margin: 2rem !important;
+    padding: 5px;
 }
 
 // Media para portatiles
 @media screen and (min-device-width: 1024px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
     .margen-total {
-        margin: 5rem 8rem 5rem 8rem !important;
+        margin: 3rem 8rem 5rem 8rem !important;
     }
 }
 
 // Media para pantallas grandes
 @media screen and (min-device-width: 1601px) and (-webkit-min-device-pixel-ratio: 1) {
     .margen-total {
-        margin: 5rem 15rem 5rem 15rem !important;
+        margin: 3rem 15rem 5rem 15rem !important;
     }
 }
