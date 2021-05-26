@@ -105,13 +105,4 @@ export class FormularioNuevaBandaComponent implements OnInit {
       urlSpotify: data.urlSpotify,
     });
   }
-
-  asdasd() {
-    var select = <HTMLInputElement>document.getElementById('selector');
-    console.log('Value = ', select.value);
-  }
-
-  checkForm() {
-    return this.formulario.invalid;
-  }
 }

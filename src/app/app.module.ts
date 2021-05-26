@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-
+// Componentes
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MenuComponent } from './components/menu/menu.component';
@@ -13,6 +13,9 @@ import { DetallesGrupoComponent } from './components/detalles-grupo/detalles-gru
 import { FormularioNuevaBandaComponent } from './components/formulario-nueva-banda/formulario-nueva-banda.component';
 import { BuscadorComponent } from './components/buscador/buscador.component';
 
+// Servicios
+import { ApiService } from './services/api.service';
+import { MessageService } from './services/message.service';
 
 @NgModule({
   declarations: [
@@ -22,16 +25,16 @@ import { BuscadorComponent } from './components/buscador/buscador.component';
     InicioComponent,
     DetallesGrupoComponent,
     FormularioNuevaBandaComponent,
-    BuscadorComponent
+    BuscadorComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [ApiService, MessageService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
